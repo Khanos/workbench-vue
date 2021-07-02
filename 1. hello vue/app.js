@@ -3,14 +3,18 @@ const myObj = {
   lastName: 'Rodriguez'
 };
 
-Vue.createApp({
+const vm = Vue.createApp({
   data(){
     return myObj
   }
-}).mount('.app');
+}).mount('#app');
 
-Vue.createApp({
-  data(){
-    return myObj
-  }
-}).mount('.app2');
+setTimeout(() => {
+  vm.firstName = 'Epilef';
+}, 2000);
+
+// Vue.createApp({
+//   data(){
+//     return myObj
+//   }
+// }).mount('.app2');
