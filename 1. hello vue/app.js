@@ -6,6 +6,11 @@ const myObj = {
 const vm = Vue.createApp({
   data(){
     return myObj
+  },
+  methods: {
+    fullName() {
+      return `${this.firstName} ${this.lastName.toUpperCase()}`;
+    }
   }
 }).mount('#app');
 
