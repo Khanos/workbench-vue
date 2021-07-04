@@ -5,9 +5,15 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <p>Hey</p>
       <p>{{ fullName() }}</p>
+      <p><a v-bind:href="url" target="_blank">Google</a></p>
+      <hr/>
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" v-model="firstName"/>
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" v-model="lastName"/>
     </div>
 
     <!-- <div class="app2">

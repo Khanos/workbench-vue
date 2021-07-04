@@ -1,6 +1,7 @@
 const myObj = {
   firstName: 'Jhon',
-  lastName: 'Rodriguez'
+  lastName: 'Rodriguez',
+  url: 'https://google.com'
 };
 
 const vm = Vue.createApp({
