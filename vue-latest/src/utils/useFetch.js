@@ -37,6 +37,5 @@ export const useFetch = (url, options = defaultOptions) => {
   } else {
     fetchCall();
   }
-  !cache && fetchCall();
   return { data, error, loading, fetchCall};
 }

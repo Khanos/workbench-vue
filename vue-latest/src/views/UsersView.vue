@@ -1,6 +1,6 @@
 <template>
   <main class="users-container">
-    <h1>Hello from users {{ loading }}</h1>
+    <h1>Hello from users</h1>
     <p v-if="loading">Loading users...</p>
     <ul v-else class="users">
       <li v-for="user in userList" :key="user.id" class="user">
