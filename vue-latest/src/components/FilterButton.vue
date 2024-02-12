@@ -11,7 +11,12 @@ const usersStore = useUsersStore();
 const { sortBy, setCurrentColumn } = usersStore;
 const { order, currentColmn } = storeToRefs(usersStore);
 
-const props = defineProps(['id']);
+const props = defineProps({
+  id: {
+    type: String,
+    required: true
+  },
+});
 const { id } = props;
 
 const sortIcon = computed(() => {
