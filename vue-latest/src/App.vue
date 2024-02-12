@@ -1,7 +1,8 @@
 <template>
   <nav>
-    <RouterLink to="/">counter</RouterLink>
-    <RouterLink to="/users">users</RouterLink>
+    <RouterLink to="/">Counter</RouterLink>
+    <RouterLink to="/users">Users</RouterLink>
+    <RouterLink to="/react-clone">React</RouterLink>
   </nav>
 
   <RouterView />
