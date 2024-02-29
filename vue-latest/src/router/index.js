@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CounterView from '../views/CounterView.vue';
 import ReactClone from '../views/ReactClone.vue';
+import MeliClone from '../views/MeliClone.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/react-clone',
       name: 'react-clone',
       component: ReactClone
+    },
+    {
+      path: '/meli-clone',
+      name: 'meli-clone',
+      component: MeliClone
     }
   ]
 })

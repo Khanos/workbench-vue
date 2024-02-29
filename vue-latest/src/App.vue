@@ -3,6 +3,7 @@
     <RouterLink to="/">Counter</RouterLink>
     <RouterLink to="/users">Users</RouterLink>
     <RouterLink to="/react-clone">React</RouterLink>
+    <RouterLink to="/meli-clone">Store</RouterLink>
   </nav>
 
   <RouterView />

@@ -1,11 +1,11 @@
 
 <template>
   <main class="users-container">
-    <h1>Hello from users</h1>
+    <h1 class="py-6 text-xl">Hello from users</h1>
     <p v-if="loading">Loading users...</p>
-    <table v-else class="users">
+    <table v-else class="users table-auto border-collapse">
       <thead>
-        <tr>
+        <tr class="bg-gray-500">
           <th><span>Id</span> <FilterButton id="id" /></th>
           <th><span>Name</span> <FilterButton id="name" /></th>
           <th><span>Email</span> <FilterButton id="email" /></th>
@@ -46,25 +46,25 @@
 </template>
 
 <script setup>
-import { useFetch } from '../utils/useFetch';
+import doFetch from '../utils/doFetch';
 import FilterButton from '../components/FilterButton.vue';
 import { useUsersStore } from '@/stores/users';
-import { storeToRefs } from 'pinia'
-import { watch } from 'vue';
+import { storeToRefs } from 'pinia';
+import { ref, onMounted } from 'vue';
 
+const loading = ref(true);
 const usersStore = useUsersStore();
 const { users } = storeToRefs(usersStore);
 const { setUsers } = usersStore;
 
-const { data, error, loading } = useFetch('https://jsonplaceholder.typicode.com/users', {
-  simulateDelay: false,
-  simulateError: false,
-  cache: true,
-});
+onMounted(async() => {
+  const data = await doFetch('https://jsonplaceholder.typicode.com/users');
 
-if(data.value && data.value.length > 0) setUsers(data.value);
-watch(data, (newData) => {
-  if(newData && newData.length > 0) setUsers(newData);
+  if(data && data.length > 0) {
+    console.log("data: ", data);
+    setUsers(data);
+    loading.value = false;
+  };
 });
 
 </script>
